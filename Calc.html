@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <script>
+        function calculate() {
+            
+            var operand1 = +prompt("Enter no. 1")
+            var operand2 = +prompt("Enter no. 2")
+            var operator = prompt("Enter Operator")
+            
+            if (isNaN(operand1) || isNaN(operand2)) {
+              console.error("Please enter valid numeric operands");
+              return;
+            }
+            var result;
+            switch (operator) {
+              case "+":
+                result = operand1 + operand2;
+                break;
+              case "-":
+                result = operand1 - operand2;
+                break;
+              case "*":
+                result = operand1 * operand2;
+                break;
+              case "/":
+                if (operand2 === 0) {
+                  console.error("Division by zero is not allowed");
+                  return;
+                }
+                result = operand1 / operand2;
+                break;
+              default:
+              console.error("Invalid operator");
+                return;
+            }
+
+            document.write("Result: " + result);
+          }
+          calculate()
+        </script>
+    </body>
+</html>
